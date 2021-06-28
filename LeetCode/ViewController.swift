@@ -8,14 +8,18 @@
 import UIKit
 
 class ViewController: UIViewController {
-    let nums = [1,1,0,1,1,1]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print(findMaxConsecutiveOnes(nums))
+//        print(findMaxConsecutiveOnes(nums))
+        print(sortedSquares([-7,-3,2,3,11]))
     }
     
+    // MARK: - findMaxConsecutiveOnes
+    /*
     func findMaxConsecutiveOnes(_ nums: [Int]) -> Int {
+     let nums = [1,1,0,1,1,1]
         // MARK: - второй вариант
         /*var consecutive: [Int] = []
          var cahche: [Int] = []
@@ -73,6 +77,18 @@ class ViewController: UIViewController {
          */
     }
 
-
+*/
+    // MARK: - findMaxConsecutiveOnes end
+    // сделал с первого раза
+    // MARK: - Squares of a Sorted Array
+    // nums = [-7,-3,2,3,11]
+    func sortedSquares(_ nums: [Int]) -> [Int] {
+        var newValues: [Int] = []
+        nums.forEach {
+            newValues.append($0 * $0)
+        }
+        return newValues.sorted()
+    }
+    // MARK: - Squares of a Sorted Array end
 }
 
