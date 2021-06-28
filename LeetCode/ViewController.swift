@@ -13,11 +13,13 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
 //        print(findMaxConsecutiveOnes(nums))
-        print(sortedSquares([-7,-3,2,3,11]))
+//        print(sortedSquares([-7,-3,2,3,11]))
+        print(findNumbers([555,900_000_000,4820,1771]))
+//        print(13 % 2)
     }
     
     // MARK: - findMaxConsecutiveOnes
-    /*
+    
     func findMaxConsecutiveOnes(_ nums: [Int]) -> Int {
      let nums = [1,1,0,1,1,1]
         // MARK: - второй вариант
@@ -77,7 +79,6 @@ class ViewController: UIViewController {
          */
     }
 
-*/
     // MARK: - findMaxConsecutiveOnes end
     // сделал с первого раза
     // MARK: - Squares of a Sorted Array
@@ -90,5 +91,26 @@ class ViewController: UIViewController {
         return newValues.sorted()
     }
     // MARK: - Squares of a Sorted Array end
+    
+    
+    // MARK: - Find Numbers with Even Number of Digits (двузначное, трехзначное и тд) нужно найти четные значения (2 знака (12), 4 знака(1000, 6 знаков(123456)
+    func findNumbers(_ nums: [Int]) -> Int {
+        var count: Int = 0
+        nums.forEach {
+            let length = "\($0)".count
+            if length % 2 == 0 {
+                count += 1
+            }
+        }
+        /*for num in nums {
+            let length = "\(num)".count
+            if length % 2 == 0 {
+                count += 1
+            }
+            print(length)
+        }*/
+        return count
+    }
+    // MARK: - Find Numbers with Even Number of Digits end
 }
 
