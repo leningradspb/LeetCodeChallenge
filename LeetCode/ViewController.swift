@@ -179,7 +179,7 @@ class ViewController: UIViewController {
     }
     // MARK: - Remove Element - end
     
-    // MARK: - Remove Element
+    // MARK: - Remove Duplicates from Sorted Array
     func removeDuplicates(_ nums: inout [Int]) -> Int {
         var cache: [Int] = []
         nums.forEach {
@@ -190,6 +190,6 @@ class ViewController: UIViewController {
         nums = cache
         return nums.count
     }
-    // MARK: - Remove Element - end
+    // MARK: - Remove Duplicates from Sorted Array - end
 }
 
