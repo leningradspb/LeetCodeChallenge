@@ -210,5 +210,50 @@ class ViewController: UIViewController {
         return isContains
     }
     // MARK: - Check If N and Its Double Exist - end
+    
+    // MARK: - Valid Mountain Array
+    func validMountainArray(_ arr: [Int]) -> Bool {
+        var isMountain = false
+        var isUp = true
+        guard arr.count > 2 else { return false }
+        
+        for index in 0..<arr.count {
+            if isUp {
+                if index == arr.count - 1 {
+                    return arr[index - 1] > arr[index]
+                }
+                
+                if arr[index] < arr[index + 1] {
+                    isMountain = true
+                } else if arr[index] > arr[index + 1] {
+                    if index == 0 {
+                        return false
+                    }
+                    isUp = false
+                } else {
+                    return false
+                }
+                
+            } else {
+                if index == arr.count - 1 {
+                    if arr[index] < arr[index - 1] {
+                        return true
+                    } else {
+                        return false
+                    }
+                }
+                
+                if arr[index] > arr[index + 1] {
+                    isMountain = true
+                } else {
+                    return false
+                }
+            }
+        }
+        
+        return isMountain && !isUp
+    }
+    // MARK: - Valid Mountain Array - end
+    
 }
 
