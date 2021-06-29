@@ -21,6 +21,7 @@ class ViewController: UIViewController {
 //        print(array)
         
 //        merge(&array, 3, [2,3,5], 3)
+        checkIfExist([-2,0,10,-19,4,6,-8])
     }
     
     // MARK: - findMaxConsecutiveOnes
@@ -191,5 +192,23 @@ class ViewController: UIViewController {
         return nums.count
     }
     // MARK: - Remove Duplicates from Sorted Array - end
+    
+    // MARK: - Check If N and Its Double Exist
+    func checkIfExist(_ arr: [Int]) -> Bool {
+        var isContains = false
+        if arr.firstIndex(of: 0) != arr.lastIndex(of: 0) {
+            isContains = true
+        }
+        
+        arr.forEach {
+            if $0 != 0, arr.contains($0 * 2) {
+                print($0)
+                isContains = true
+                return
+            }
+        }
+        return isContains
+    }
+    // MARK: - Check If N and Its Double Exist - end
 }
 
