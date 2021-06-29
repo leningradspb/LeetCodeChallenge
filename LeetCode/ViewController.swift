@@ -171,5 +171,12 @@ class ViewController: UIViewController {
         nums1 = nums1.sorted()
     }
     // MARK: - Merge Sorted Array - end
+    
+    // MARK: - Remove Element
+    func removeElement(_ nums: inout [Int], _ val: Int) -> Int {
+        nums.removeAll(where: {$0 == val})
+        return nums.count
+    }
+    // MARK: - Remove Element - end
 }
 
