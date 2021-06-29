@@ -255,5 +255,29 @@ class ViewController: UIViewController {
     }
     // MARK: - Valid Mountain Array - end
     
+    // MARK: - Replace Elements with Greatest Element on Right Side
+    func replaceElements(_ arr: [Int]) -> [Int] {
+        guard arr.count > 1 else { return [-1] }
+        var mutableArray = arr
+        for index in 0..<mutableArray.count {
+            if index == mutableArray.count - 1 {
+                mutableArray[index] = -1
+            } else {
+                var cache: Int?
+                for value in index + 1..<mutableArray.count {
+                    if cache == nil {
+                        cache = mutableArray[value]
+                    } else {
+                        if cache! < mutableArray[value] {
+                            cache = mutableArray[value]
+                        }
+                    }
+                }
+                mutableArray[index] = cache!
+            }
+        }
+        return mutableArray
+    }
+    // MARK: - Replace Elements with Greatest Element on Right Side - end
 }
 
