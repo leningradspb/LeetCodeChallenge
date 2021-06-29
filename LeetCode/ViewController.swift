@@ -14,8 +14,11 @@ class ViewController: UIViewController {
         
 //        print(findMaxConsecutiveOnes(nums))
 //        print(sortedSquares([-7,-3,2,3,11]))
-        print(findNumbers([555,900_000_000,4820,1771]))
+//        print(findNumbers([555,900_000_000,4820,1771]))
 //        print(13 % 2)
+//        var array = [0,1,7,6,0,2,0,7]
+//        duplicateZeros(&array)
+//        print(array)
     }
     
     // MARK: - findMaxConsecutiveOnes
@@ -112,5 +115,43 @@ class ViewController: UIViewController {
         return count
     }
     // MARK: - Find Numbers with Even Number of Digits end
+    
+    // MARK: - Duplicate Zeros
+    func duplicateZeros(_ arr: inout [Int]) {
+        var index: Int = 0
+        var count = 1
+        
+        for value in arr {
+            if value == 0 && index + count < arr.count {
+                arr.insert(0, at: index + count)
+                arr.removeLast()
+                count += 1
+            }
+            index += 1
+        }
+        
+        /* резерв
+         var index: Int = 0
+         var indexes: [Int] = []
+         
+         for value in arr {
+         if value == 0 {
+         indexes.append(index)
+         }
+         index += 1
+         }
+         var count = 1
+         indexes.forEach {
+         if $0 != arr.count - 1 && $0 + count < arr.count {
+         
+         arr.insert(0, at: $0 + count)
+         arr.removeLast()
+         count += 1
+         }
+         }
+         */
+        
+    }
+    // MARK: - Duplicate Zeros end
 }
 
