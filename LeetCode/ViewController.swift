@@ -19,6 +19,8 @@ class ViewController: UIViewController {
 //        var array = [0,1,7,6,0,2,0,7]
 //        duplicateZeros(&array)
 //        print(array)
+        
+//        merge(&array, 3, [2,3,5], 3)
     }
     
     // MARK: - findMaxConsecutiveOnes
@@ -153,5 +155,21 @@ class ViewController: UIViewController {
         
     }
     // MARK: - Duplicate Zeros end
+    
+    // MARK: - Merge Sorted Array
+    func merge(_ nums1: inout [Int], _ m: Int, _ nums2: [Int], _ n: Int) {
+// var array = [1,2,3,0,0,0]
+        if m == 0 {
+            nums1.removeAll()
+        } else {
+            for _ in m..<nums1.count {
+                nums1.removeLast()
+            }
+        }
+        nums1 += nums2
+        
+        nums1 = nums1.sorted()
+    }
+    // MARK: - Merge Sorted Array - end
 }
 
