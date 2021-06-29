@@ -178,5 +178,18 @@ class ViewController: UIViewController {
         return nums.count
     }
     // MARK: - Remove Element - end
+    
+    // MARK: - Remove Element
+    func removeDuplicates(_ nums: inout [Int]) -> Int {
+        var cache: [Int] = []
+        nums.forEach {
+            if !cache.contains($0) {
+                cache.append($0)
+            }
+        }
+        nums = cache
+        return nums.count
+    }
+    // MARK: - Remove Element - end
 }
 
