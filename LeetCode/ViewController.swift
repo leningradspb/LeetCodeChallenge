@@ -23,9 +23,11 @@ class ViewController: UIViewController {
 //        merge(&array, 3, [2,3,5], 3)
 //        checkIfExist([-2,0,10,-19,4,6,-8])
         
-        var arr = [0,0,1]
+        var arr = [2,2,3,1]
 //        var arr = [0,1,0,3,12]
-        moveZeroes(&arr)
+//        moveZeroes(&arr)
+        
+        thirdMax(arr)
     }
     
     // MARK: - findMaxConsecutiveOnes
@@ -325,5 +327,33 @@ class ViewController: UIViewController {
         return counter
     }
     // MARK: - Height Checker - end
+    
+    // MARK: - Third Maximum Number
+    func thirdMax(_ nums: [Int]) -> Int {
+        var filteredArray: [Int] = []
+        nums.forEach {
+            if !filteredArray.contains($0) {
+                filteredArray.append($0)
+            }
+        }
+        
+        filteredArray = filteredArray.sorted()
+        var maxNumber = 0
+        
+        if filteredArray.count < 3 {
+            filteredArray.forEach {
+                maxNumber = max(maxNumber, $0)
+            }
+        } else {
+            for v in 0...1 {
+               let max = filteredArray.max()!
+                filteredArray.removeAll(where: {$0 == max})
+            }
+            maxNumber = filteredArray.max()!
+        }
+        
+        return maxNumber
+        }
+    // MARK: - Third Maximum Number - end
 }
 
