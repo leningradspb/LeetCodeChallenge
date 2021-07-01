@@ -311,5 +311,19 @@ class ViewController: UIViewController {
         return evens + odds
     }
     // MARK: - Sort Array By Parity - end
+    
+    // MARK: - Height Checker
+    func heightChecker(_ heights: [Int]) -> Int {
+        let sortedArray = heights.sorted()
+        var counter = 0
+        for index in 0..<heights.count {
+            if sortedArray[index] != heights[index] {
+                counter += 1
+            }
+        }
+        
+        return counter
+    }
+    // MARK: - Height Checker - end
 }
 
