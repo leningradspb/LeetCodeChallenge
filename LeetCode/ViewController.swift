@@ -23,11 +23,12 @@ class ViewController: UIViewController {
 //        merge(&array, 3, [2,3,5], 3)
 //        checkIfExist([-2,0,10,-19,4,6,-8])
         
-        var arr = [2,2,3,1]
+//        var arr = [1,1,2,2]
 //        var arr = [0,1,0,3,12]
 //        moveZeroes(&arr)
-        
-        thirdMax(arr)
+//        let arr = [4,3,2,7,8,2,3,1]
+        let arr = [10,2,5,10,9,1,1,4,3,7]
+        print(findDisappearedNumbers(arr))
     }
     
     // MARK: - findMaxConsecutiveOnes
@@ -355,5 +356,48 @@ class ViewController: UIViewController {
         return maxNumber
         }
     // MARK: - Third Maximum Number - end
+    
+    // MARK: - Find All Numbers Disappeared in an Array
+
+//    func findDisappearedNumbers(_ nums: [Int]) -> [Int] {
+//        let sortedArray = nums.sorted()
+//        var disappearedNumbers: [Int] = []
+//        // [4,3,2,7,8,2,3,1]
+//        for index in 0..<sortedArray.count {
+//            let element = sortedArray[index]
+//            print(element, index + 1)
+//            if element != index + 1 {
+//                if disappearedNumbers.contains(element) {
+//                    disappearedNumbers.removeAll(where: { $0 == element})
+//                    disappearedNumbers.append(index + 1) // index + 1
+//                    print("element = \(element), index = \(index + 1) sortedArray = \(sortedArray), disappearedNumbers = \(disappearedNumbers)")
+//
+//                } else {
+//                    disappearedNumbers.append(index + 1) // index + 1
+//                    print("element = \(element), index = \(index + 1) sortedArray = \(sortedArray), disappearedNumbers = \(disappearedNumbers)")
+//
+//                }
+//            }
+////            else {
+////                if disappearedNumbers.contains(index + 1) {
+////                    disappearedNumbers.removeAll(where: { $0 == index + 1 })
+////                }
+////            }
+//        }
+//        return disappearedNumbers
+//    }
+    
+    func findDisappearedNumbers(_ nums: [Int]) -> [Int] {
+        let sortedArray = nums.sorted()
+        var disappearedNumbers: [Int] = []
+        for index in 0..<sortedArray.count {
+            if !sortedArray.contains(index + 1) {
+                disappearedNumbers.append(index + 1)
+            }
+        }
+        return disappearedNumbers
+    }
+    
+    // MARK: - Find All Numbers Disappeared in an Array - end
 }
 
