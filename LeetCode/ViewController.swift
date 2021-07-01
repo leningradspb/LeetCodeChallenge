@@ -296,5 +296,26 @@ class ViewController: UIViewController {
         }
     }
     // MARK: - Move Zeroes - end
+    
+    // MARK: - Sort Array By Parity
+    func sortArrayByParity(_ nums: [Int]) -> [Int] {
+        
+        
+        // первый вариант
+        /*
+        var evens: [Int] = []
+        var odds: [Int] = []
+        for num in nums {
+            if num % 2 == 0 {
+                evens.append(num)
+            } else {
+                odds.append(num)
+            }
+        }
+        return evens + odds
+ */
+        return []
+    }
+    // MARK: - Sort Array By Parity - end
 }
 
