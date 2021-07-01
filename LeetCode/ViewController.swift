@@ -21,7 +21,11 @@ class ViewController: UIViewController {
 //        print(array)
         
 //        merge(&array, 3, [2,3,5], 3)
-        checkIfExist([-2,0,10,-19,4,6,-8])
+//        checkIfExist([-2,0,10,-19,4,6,-8])
+        
+        var arr = [0,0,1]
+//        var arr = [0,1,0,3,12]
+        moveZeroes(&arr)
     }
     
     // MARK: - findMaxConsecutiveOnes
@@ -279,5 +283,18 @@ class ViewController: UIViewController {
         return mutableArray
     }
     // MARK: - Replace Elements with Greatest Element on Right Side - end
+    
+    // MARK: - Move Zeroes
+    func moveZeroes(_ nums: inout [Int]) {
+        var counter = 0
+        for index in 0..<nums.count {
+            if index - counter >= 0, nums[index - counter] == 0 {
+                nums.insert(0, at: nums.count)
+                nums.remove(at: index - counter)
+                counter += 1
+            }
+        }
+    }
+    // MARK: - Move Zeroes - end
 }
 
