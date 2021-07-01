@@ -299,10 +299,6 @@ class ViewController: UIViewController {
     
     // MARK: - Sort Array By Parity
     func sortArrayByParity(_ nums: [Int]) -> [Int] {
-        
-        
-        // первый вариант
-        /*
         var evens: [Int] = []
         var odds: [Int] = []
         for num in nums {
@@ -313,8 +309,6 @@ class ViewController: UIViewController {
             }
         }
         return evens + odds
- */
-        return []
     }
     // MARK: - Sort Array By Parity - end
 }
