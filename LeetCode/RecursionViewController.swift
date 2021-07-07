@@ -46,5 +46,42 @@ class RecursionViewController: UIViewController {
         print("s = \(s), firstIndex = \(firstIndex), lastIndex = \(lastIndex)")
         reverseString(&s)
     }
+    
+    // MARK: - Swap Nodes in Pairs (сам не решил)
+    
+    public class ListNode {
+        public var val: Int
+        public var next: ListNode?
+        public init() { self.val = 0; self.next = nil; }
+        public init(_ val: Int) { self.val = val; self.next = nil; }
+        public init(_ val: Int, _ next: ListNode?) { self.val = val; self.next = next; }
+    }
+    
+    lazy var fourth = ListNode(4, nil)
+    lazy var third = ListNode(3, fourth)
+    lazy var second = ListNode(2, third)
+    lazy var head = ListNode(1, second)
+    
+    func swapPairs(_ head: ListNode?) -> ListNode? {
+        let node = ListNode(0)
+        node.next = head
+        var prev = node
+        var current = head
+        
+        while prev != nil && current?.next != nil {
+            let next = current!.next
+            let post = current!.next!.next
+            
+            prev.next = next
+            next!.next = current
+            current!.next = post
+            
+            prev = current!
+            current = post
+        }
+        
+        return node.next
+    }
+
 
 }
