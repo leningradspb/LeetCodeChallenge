@@ -47,7 +47,7 @@ class RecursionViewController: UIViewController {
         reverseString(&s)
     }
     
-    // MARK: - Swap Nodes in Pairs (сам не решил)
+    // MARK: - Swap Nodes in Pairs (сам не решил, но и не сильно пытался. Счел задание далеким от реальности)
     
     public class ListNode {
         public var val: Int
