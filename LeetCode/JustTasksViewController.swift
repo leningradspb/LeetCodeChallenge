@@ -118,4 +118,11 @@ class JustTasksViewController: UIViewController {
             return 0
         }
     }
+    
+    // MARK: - Palindrome Number (easy)
+    func isPalindrome(_ x: Int) -> Bool {
+        let strOriginal = "\(x)"
+        let reversedStr = String(strOriginal.reversed())
+        return strOriginal == reversedStr
+    }
 }
