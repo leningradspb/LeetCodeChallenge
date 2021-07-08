@@ -16,7 +16,9 @@ class JustTasksViewController: UIViewController {
 //        let pow = pow(2, 32)
         
 //        print(romanToInt("LVIII"))
-        print(romanToInt("IX"))
+//        print(romanToInt("IX"))
+//        print(singleNumber([2,2,1]))
+        print(singleNumber([4,1,2,1,2]))
         
     }
     
@@ -164,5 +166,63 @@ class JustTasksViewController: UIViewController {
             }
         }
         return sum
+    }
+    
+    // MARK: - Single Number v1
+    
+   /* func singleNumber(_ nums: [Int]) -> Int {
+        for v in nums {
+            if let firstIndex = nums.firstIndex(where: {$0 == v}) {
+                if firstIndex == nums.lastIndex(where: {$0 == v}) {
+                    return nums[firstIndex]
+                }
+            }
+        }
+        return 0
+    }
+     */
+    
+    // MARK: - Single Number v2 (подсмотрел)
+    
+//    func singleNumber(_ nums: [Int]) -> Int {
+//        return nums.reduce(0, ^)
+//    }
+    
+    // MARK: - Single Number v3 RECURSIVE
+   // https://leetcode.com/problems/single-number/
+//    func singleNumber(_ nums: [Int]) -> Int {
+//
+//        if nums.count < 2 {
+//            return nums[0]
+//        } else {
+//            for index in 0..<nums.count {
+//                let nextValues = Array(nums[index + 1..<nums.count])
+//                if nextValues.contains(nums[index]) {
+//                    var newNums = nums
+//                    newNums.removeAll(where: {$0 == nums[index] })
+//                    print(newNums)
+//                    return singleNumber(newNums)
+//                }
+//            }
+//        }
+//        return nums[0]
+//    }
+    // MARK: - Single Number v4
+    func singleNumber(_ nums: [Int]) -> Int {
+        var counter = 0
+        var cache = nums
+        for num in nums {
+            while cache.contains(num) {
+                cache.remove(at: cache.firstIndex(where: {$0 == num})!)
+                counter += 1
+            }
+            
+            if counter == 1 {
+                return num
+            } else {
+                counter = 0
+            }
+        }
+        return 0
     }
 }
