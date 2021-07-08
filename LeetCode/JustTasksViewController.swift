@@ -12,8 +12,12 @@ class JustTasksViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-       print(reverse(-120))
-        let pow = pow(2, 32)
+//       print(reverse(-120))
+//        let pow = pow(2, 32)
+        
+//        print(romanToInt("LVIII"))
+        print(romanToInt("IX"))
+        
     }
     
     // MARK: - Two Sum (easy) v1
@@ -124,5 +128,41 @@ class JustTasksViewController: UIViewController {
         let strOriginal = "\(x)"
         let reversedStr = String(strOriginal.reversed())
         return strOriginal == reversedStr
+    }
+    
+    // MARK: - Roman to Integer
+    
+    func romanToInt(_ s: String) -> Int {
+        let dict = ["M":1000, "CM":900, "D": 500, "CD": 400, "C": 100, "XC": 90, "L": 50, "XL": 40, "X": 10, "IX": 9, "V": 5, "IV": 4, "I": 1]
+
+        let array = Array(s)
+        var sum = 0
+        var index = 0
+        var nextIndex = 1
+        
+        while nextIndex < s.count {
+            let character = array[index]
+            let nextCharacter = array[index + 1]
+            let joinedCharacters = String(character) + String(nextCharacter)
+            if let key = dict.keys.first(where: { $0 == joinedCharacters }) {
+                sum += dict[key]!
+                index += 2
+                nextIndex += 2
+            } else {
+                if let key = dict.keys.first(where: { $0 == String(character) }) {
+                    sum += dict[key]!
+                }
+                index += 1
+                nextIndex += 1
+            }
+        }
+        
+        if index < s.count {
+            let character = array[index]
+            if let key = dict.keys.first(where: { $0 == String(character) }) {
+                sum += dict[key]!
+            }
+        }
+        return sum
     }
 }
