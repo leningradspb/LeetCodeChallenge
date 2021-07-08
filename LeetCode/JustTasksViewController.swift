@@ -12,7 +12,8 @@ class JustTasksViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-       print(twoSum([2, 5, 5, 11], 10))
+       print(reverse(-120))
+        let pow = pow(2, 32)
     }
     
     // MARK: - Two Sum (easy) v1
@@ -79,5 +80,42 @@ class JustTasksViewController: UIViewController {
             }
         }
         return indexes
+    }
+     
+    // MARK: - Reverse Integer (easy) v1 (сам)
+//    func reverse(_ x: Int) -> Int {
+//        var strX = "\(x)"
+//        while strX.last == "0" {
+//            strX.removeLast()
+//        }
+////        strX = strX.replacingOccurrences(of: "0", with: "")
+//        strX = String(strX.reversed())
+//        if strX.last == "-" {
+//            strX.removeLast()
+//            strX = "-" + strX
+//        }
+//        print(strX)
+//        if let intFromStr = Int(strX) {
+//            return intFromStr
+//        } else {
+//            return 0
+//        }
+//
+//    }
+    
+    // MARK: - Reverse Integer (easy) v1 (нашел вариант лучше)
+    func reverse(_ x: Int) -> Int {
+        var strX = "\(abs(x))"
+        strX = String(strX.reversed())
+       
+        if let intStr = Int(strX) {
+            // условие задачи
+            if intStr > Int(truncating: NSDecimalNumber(decimal: (pow(2, 31) - 1))) {
+                return 0
+            }
+            return x < 0 ? intStr * -1 : intStr
+        } else {
+            return 0
+        }
     }
 }
