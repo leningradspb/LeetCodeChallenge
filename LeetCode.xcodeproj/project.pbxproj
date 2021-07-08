@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		261686912695E80900632D60 /* RecursionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 261686902695E80900632D60 /* RecursionViewController.swift */; };
+		2670533A269703ED00C824F0 /* JustTasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26705339269703ED00C824F0 /* JustTasksViewController.swift */; };
 		2692A5BC267354310012CE47 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2692A5BB267354310012CE47 /* AppDelegate.swift */; };
 		2692A5BE267354310012CE47 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2692A5BD267354310012CE47 /* SceneDelegate.swift */; };
 		2692A5C0267354310012CE47 /* ArrayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2692A5BF267354310012CE47 /* ArrayViewController.swift */; };
@@ -18,6 +19,7 @@
 
 /* Begin PBXFileReference section */
 		261686902695E80900632D60 /* RecursionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecursionViewController.swift; sourceTree = "<group>"; };
+		26705339269703ED00C824F0 /* JustTasksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JustTasksViewController.swift; sourceTree = "<group>"; };
 		2692A5B8267354310012CE47 /* LeetCode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LeetCode.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2692A5BB267354310012CE47 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2692A5BD267354310012CE47 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -62,6 +64,7 @@
 				2692A5BD267354310012CE47 /* SceneDelegate.swift */,
 				2692A5BF267354310012CE47 /* ArrayViewController.swift */,
 				261686902695E80900632D60 /* RecursionViewController.swift */,
+				26705339269703ED00C824F0 /* JustTasksViewController.swift */,
 				2692A5C1267354310012CE47 /* Main.storyboard */,
 				2692A5C4267354310012CE47 /* Assets.xcassets */,
 				2692A5C6267354310012CE47 /* LaunchScreen.storyboard */,
@@ -141,6 +144,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2692A5C0267354310012CE47 /* ArrayViewController.swift in Sources */,
+				2670533A269703ED00C824F0 /* JustTasksViewController.swift in Sources */,
 				261686912695E80900632D60 /* RecursionViewController.swift in Sources */,
 				2692A5BC267354310012CE47 /* AppDelegate.swift in Sources */,
 				2692A5BE267354310012CE47 /* SceneDelegate.swift in Sources */,
