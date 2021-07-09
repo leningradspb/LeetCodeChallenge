@@ -18,8 +18,8 @@ class JustTasksViewController: UIViewController {
 //        print(romanToInt("LVIII"))
 //        print(romanToInt("IX"))
 //        print(singleNumber([2,2,1]))
-        print(singleNumber([4,1,2,1,2]))
-        
+//        print(singleNumber([4,1,2,1,2]))
+        print(longestCommonPrefix(["dog","dacecar","dar"]))
     }
     
     // MARK: - Two Sum (easy) v1
@@ -225,4 +225,85 @@ class JustTasksViewController: UIViewController {
         }
         return 0
     }
+    
+    // MARK: - Longest Common Prefix
+//    func longestCommonPrefix(_ strs: [String]) -> String {
+//        if strs.count < 2 {
+//            return strs.first ?? ""
+//        }
+//
+//        var matches = 0
+//        let first = strs[0]
+////        for character in first {
+//            for index in 1..<strs.count {
+//                var word = strs[index]
+//                var firstCache = first
+//                var localMatches = 0
+//                while word.first == firstCache.first && !word.isEmpty && !firstCache.isEmpty {
+//                    word.removeFirst()
+//                    firstCache.removeFirst()
+//                    localMatches += 1
+//                    print(word, firstCache, localMatches, matches)
+////                    matches = max(localMatches, matches)
+//                }
+//                matches = min(matches, max(localMatches - 1, 0))
+////                if matches == 0 {
+////                    matches = localMatches
+////                } else {
+////                    matches = min(matches, max(localMatches - 1, 0))
+//////                    if localMatches > 0 {
+//////                        matches = min(matches, max(localMatches - 1, 0))
+//////                    } else {
+//////                        matches = max(matches, max(localMatches - 1, 0))
+//////                    }
+////
+////                }
+//            }
+////        }
+//        return matches > 0 ? String(Array(first)[0...matches]) : ""
+//        }
+    /// cam
+  /*  func longestCommonPrefix(_ strs: [String]) -> String {
+    
+        if strs.count < 2 || strs.count > 200 {
+            return strs.first ?? ""
+        }
+//        print(strs.sorted(by: {$0.count < $1.count}))
+        var strSorted = strs.sorted(by: {$0.count < $1.count})
+        strSorted.removeAll(where: {$0.count > 200})
+        let first = Array(strSorted[0])
+        guard !first.isEmpty else { return "" }
+        var matches: [Int] = []
+        
+        
+        for index in 1..<strSorted.count {
+            let word = Array(strSorted[index])
+            
+            for _ in 0..<first.count {
+                var index = 0
+                while index < first.count && first[index] == word[index] {
+                    print(first[index], word[index], matches)
+                    index += 1
+                }
+                matches.append(index)
+            }
+        }
+        
+        print(matches)
+    
+//        let array = Array(strs[1..<strs.count])
+        let min = matches.min() ?? 1
+        let s = String(first[0..<min])
+        return s
+    }*/
+    // нашел более изящное (подсмотрел, не знал про allSatisfy)
+    func longestCommonPrefix(_ strs: [String]) -> String {
+        guard var `prefix` = strs.min() else { return "" }
+        while `prefix`.isEmpty == false {
+            if strs.allSatisfy({ $0.hasPrefix(`prefix`) }) { break }
+            `prefix`.removeLast()
+        }
+        return `prefix`
+    }
+    
 }
