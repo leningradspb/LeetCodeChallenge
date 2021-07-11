@@ -19,7 +19,9 @@ class JustTasksViewController: UIViewController {
 //        print(romanToInt("IX"))
 //        print(singleNumber([2,2,1]))
 //        print(singleNumber([4,1,2,1,2]))
-        print(longestCommonPrefix(["dog","dacecar","dar"]))
+//        print(longestCommonPrefix(["dog","dacecar","dar"]))
+        
+        maxSubArray([-2,1,-3,4,-1,2,1,-5,4])
     }
     
     // MARK: - Two Sum (easy) v1
@@ -306,4 +308,15 @@ class JustTasksViewController: UIViewController {
         return `prefix`
     }
     
+    // MARK: - Maximum Subarray
+    func maxSubArray(_ nums: [Int]) -> Int {
+        var result = Int.min
+        var num: Int = 0
+        for index in 0..<nums.count {
+            num = max(nums[index], num + nums[index])
+            result = max(num, result)
+            
+        }
+        return result
+    }
 }
