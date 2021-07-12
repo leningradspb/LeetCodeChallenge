@@ -319,4 +319,18 @@ class JustTasksViewController: UIViewController {
         }
         return result
     }
+    
+    // MARK: -  Subsets
+    func subsets(_ nums: [Int]) -> [[Int]] {
+        var arrayVales = [[Int]]()
+        arrayVales.append([])
+        for num in nums {
+            for val in arrayVales {
+                var valUpdate = val
+                valUpdate.append(num)
+                arrayVales.append(valUpdate)
+            }
+        }
+        return arrayVales
+    }
 }
